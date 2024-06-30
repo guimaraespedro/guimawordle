@@ -14,7 +14,7 @@ header {
   gap: 1rem;
   padding: 1.5rem;
 
-  button {
+  .help {
     justify-content: center;
     z-index: 1000;
     cursor: pointer;

@@ -72,7 +72,9 @@ function App() {
           </div>
         )}
         <header>
-          <button onClick={toglleModal}>?</button>
+          <button className="help" onClick={toglleModal}>
+            ?
+          </button>
           <h1 className="title">PGWordle</h1>
         </header>
 
