@@ -64,6 +64,13 @@ function App() {
   return (
     <div className="App">
       <div className="game-board">
+        {won && <div className="endgame won">Congratulations, you won!</div>}
+
+        {attempts === 6 && (
+          <div className="endgame loss">
+            Unfortunatly you loss :/, the word was {targetWord}
+          </div>
+        )}
         <header>
           <button onClick={toglleModal}>?</button>
           <h1 className="title">PGWordle</h1>

@@ -6,5 +6,6 @@ const apiEnpoint =
 export const queryWord = async () => {
   const response = await fetch(apiEnpoint);
   const wordArr = await response.json();
+  console.log(wordArr);
   return wordArr[0];
 };

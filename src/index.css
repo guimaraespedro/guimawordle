@@ -9,6 +9,7 @@
   --colorPlace: #d3ad69;
   --colorWrong: #312a2c;
   --colorWrongFG: #504a4b;
+  --color-loss: red;
 }
 
 body {

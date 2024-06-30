@@ -36,6 +36,22 @@ header {
   }
 }
 
+.endgame {
+  margin-top: 1rem;
+  padding: 1rem;
+  font-size: 1rem;
+  font-weight: 400;
+  border-radius: 5px;
+}
+
+.won {
+  background-color: --color-right;
+}
+
+.loss {
+  background-color: var(--color-loss);
+}
+
 h1 {
   font-weight: 600;
   font-size: 3rem;
