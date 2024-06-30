@@ -15,6 +15,7 @@ header {
   padding: 1.5rem;
 
   button {
+    justify-content: center;
     z-index: 1000;
     cursor: pointer;
     padding: 0;
@@ -32,7 +33,6 @@ header {
     align-items: center;
     border: 2px solid #d3d6da;
     border-radius: 20%;
-    justify-content: center;
   }
 }
 
