@@ -1,0 +1,32 @@
+.modal {
+  color: white;
+  position: absolute; /* Positioned relative to the element it's attached to */
+  z-index: 1000; /* High z-index to be on top of other content */
+  width: 70%; /* Set a fixed width for the popover */
+  background-color: black; /* White background */
+  border: 1px solid #ccc; /* Light grey border */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+  border-radius: 5px; /* Rounded corners */
+  padding: 15px; /* Padding inside the popover */
+  animation: fade-in 0.3s ease-out; /* Fade-in animation */
+  top: 40%; /* Center vertically */
+  left: 50%; /* Center horizontally */
+  transform: translate(-50%, -50%); /* Adjust for actual center */
+  animation: fade-in 0.3s ease-out; /* Fade-in animation */
+
+  P {
+    padding: 1rem;
+  }
+}
+
+.close-button:hover {
+  background-color: var(--app-color);
+}
+
+.modal.closed {
+  display: none;
+}
+
+.modal.open {
+  display: initial;
+}

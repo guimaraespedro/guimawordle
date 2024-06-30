@@ -1,6 +1,6 @@
 .App {
   text-align: center;
-  background-color: darkslategrey;
+  background-color: var(--app-color);
   height: 100vh;
   align-items: center;
   justify-content: center;
@@ -53,49 +53,4 @@ h1 {
   display: grid;
   gap: 1.5rem;
   justify-content: center;
-}
-
-.row {
-  gap: 0.5rem;
-  display: flex;
-  justify-content: center;
-}
-
-.cell {
-  width: 5rem;
-  height: 5rem;
-  border: 2px solid #d3d6da;
-  border-radius: 5px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  font-size: 24px;
-  font-weight: bold;
-  text-transform: uppercase;
-  transition: background-color 0.3s, border-color 0.3s;
-}
-
-@keyframes scale-animation {
-  from {
-    scale: 1.2;
-  }
-  to {
-    scale: 1;
-  }
-}
-.cell.correct {
-  animation-name: scale-animation;
-  animation-duration: 1s;
-  background-color: #6aaa64;
-}
-
-.cell.present {
-  animation-name: scale-animation;
-  animation-duration: 1s;
-  background-color: #c9b458;
-}
-
-.cell.absent {
-  background-color: #787c7e;
-  border-color: #787c7e;
 }

@@ -1,11 +1,13 @@
 import "./App.css";
 import { useEffect, useState } from "react";
+import { HelpModal } from "./components/HelpModal";
+import { queryWord } from "./services/wordService";
 
 function App() {
-  const targetWord = "PEDRO";
   const rows = 6;
   const cols = 5;
-
+  const [targetWord, setTargetWord] = useState("");
+  const [modalOpen, setModalOpen] = useState(false);
   const [attempts, setAttempts] = useState(0);
   const [currGuess, setCurrGuess] = useState("");
   const [won, setWon] = useState(false);
@@ -23,10 +25,8 @@ function App() {
         setAttempts((currAttempts) => currAttempts + 1);
         setCurrGuess("");
         setGuesses(newGuesses);
-        console.log(currGuess);
         if (currGuess === targetWord) {
           setWon(true);
-          window.removeEventListener("keydown", handleKeyPress);
         }
       }
     }
@@ -47,19 +47,25 @@ function App() {
     return "absent";
   };
 
+  const toglleModal = () => {
+    setModalOpen((v) => !v);
+  };
+
   useEffect(() => {
+    if (!targetWord)
+      queryWord().then((value) => setTargetWord(value.toLocaleUpperCase()));
     if (!won) window.addEventListener("keydown", handleKeyPress);
 
     return () => {
       window.removeEventListener("keydown", handleKeyPress);
     };
-  }, [currGuess, attempts, guesses, won]);
+  }, [currGuess, attempts, guesses, won, targetWord]);
 
   return (
     <div className="App">
       <div className="game-board">
         <header>
-          <button>?</button>
+          <button onClick={toglleModal}>?</button>
           <h1 className="title">PGWordle</h1>
         </header>
 
@@ -76,6 +82,7 @@ function App() {
           </div>
         ))}
       </div>
+      <HelpModal closeModal={toglleModal} open={modalOpen}></HelpModal>
     </div>
   );
 }
