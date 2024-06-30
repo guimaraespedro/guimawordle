@@ -1,38 +1,101 @@
 .App {
   text-align: center;
-}
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
+  background-color: darkslategrey;
+  height: 100vh;
   align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
   color: white;
 }
 
-.App-link {
-  color: #61dafb;
+header {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+  padding: 1.5rem;
+
+  button {
+    z-index: 1000;
+    cursor: pointer;
+    padding: 0;
+    width: 3rem;
+    height: 3rem;
+    background-color: transparent;
+    border: none;
+    color: #d3d6da;
+    font-weight: 400;
+    line-height: 3rem;
+    font-size: 2rem;
+    font-family: "Mitr", sans-serif;
+    font-weight: 400;
+    display: flex;
+    align-items: center;
+    border: 2px solid #d3d6da;
+    border-radius: 20%;
+    justify-content: center;
+  }
 }
 
-@keyframes App-logo-spin {
+h1 {
+  font-weight: 600;
+  font-size: 3rem;
+  line-height: 3rem;
+  height: 3rem;
+  margin: 0;
+  padding: 0;
+  text-transform: uppercase;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.game-board {
+  display: grid;
+  gap: 1.5rem;
+  justify-content: center;
+}
+
+.row {
+  gap: 0.5rem;
+  display: flex;
+  justify-content: center;
+}
+
+.cell {
+  width: 5rem;
+  height: 5rem;
+  border: 2px solid #d3d6da;
+  border-radius: 5px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 24px;
+  font-weight: bold;
+  text-transform: uppercase;
+  transition: background-color 0.3s, border-color 0.3s;
+}
+
+@keyframes scale-animation {
   from {
-    transform: rotate(0deg);
+    scale: 1.2;
   }
   to {
-    transform: rotate(360deg);
+    scale: 1;
   }
+}
+.cell.correct {
+  animation-name: scale-animation;
+  animation-duration: 1s;
+  background-color: #6aaa64;
+}
+
+.cell.present {
+  animation-name: scale-animation;
+  animation-duration: 1s;
+  background-color: #c9b458;
+}
+
+.cell.absent {
+  background-color: #787c7e;
+  border-color: #787c7e;
 }
