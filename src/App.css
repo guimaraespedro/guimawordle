@@ -36,6 +36,12 @@ header {
   }
 }
 
+@media (max-width: 1000px) {
+  header {
+    padding: 10px;
+  }
+}
+
 .endgame {
   margin-top: 1rem;
   padding: 1rem;

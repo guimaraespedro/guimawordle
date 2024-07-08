@@ -36,8 +36,8 @@ button {
 }
 
 .cell {
-  width: 5rem;
-  height: 5rem;
+  width: 7vh;
+  height: 7vh;
   border: 2px solid #d3d6da;
   border-radius: 5px;
   display: flex;
